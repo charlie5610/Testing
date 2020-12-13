@@ -140,10 +140,10 @@
                 LEFTAssen = mesh.children[1]
                 RIGHTassem = mesh.children[0]
             });
-                document.getElementById('Left').addEventListener('touchdown',Left)
-                document.getElementById('Left').addEventListener('touchup',Rotation1)
-                document.getElementById('Right').addEventListener('touchdown',Right)
-                document.getElementById('Right').addEventListener('touchup',Rotation1)
+                document.getElementById('Left').addEventListener('touchstart',Left)
+                document.getElementById('Left').addEventListener('touchend',Rotation1)
+                document.getElementById('Right').addEventListener('touchstart',Right)
+                document.getElementById('Right').addEventListener('touchend',Rotation1)
         </script>
         <style type="text/css">
             .wrap {
