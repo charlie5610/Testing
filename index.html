@@ -14,7 +14,7 @@
             <input type=button id="Left" value="Turn Left" />
             <input type=button id="Right" value="Turn Right"/>
         </div>
-        <div align="center" style='position: fixed; top: 35px; width:100%; text-align: right; z-index: 1;right:15px'>
+        <div align="center" style='position: fixed; top: 35px; width:100%; text-align: right; z-index: 1;right:15px;color:white'>
             <span rows="1" cols="15">Timer: </span><span id="Timer">00:00&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         </div>
         <a-scene
@@ -45,7 +45,7 @@
             >
                 <a-entity
                     id="bowser-model"
-                    scale="0.005 0.005 0.005"
+                    scale="0.001 0.001 0.001"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
@@ -90,7 +90,8 @@
             function Rotation(){                
                 leftGearBox();
                 rightGearBox();
-                mesh.translateOnAxis(Lvec,100*inputSpeed)
+                LEFTAssen.translateOnAxis(Lvec,100*inputSpeed)
+                RIGHTassem.translateOnAxis(Lvec,100*inputSpeed)
             }            
             function RotateLeft(){
                 LEFTAssen.attach(RIGHTassem)
@@ -135,13 +136,14 @@
             }            
             scene1.addEventListener('loaded', function (e) {
                 mesh = gltf.getObject3D('mesh');
+                console.log(mesh)
                 LEFTAssen = mesh.children[1]
                 RIGHTassem = mesh.children[0]
             });
-                document.getElementById('Left').addEventListener('mousedown',Left)
-                document.getElementById('Left').addEventListener('mouseup',Rotation1)
-                document.getElementById('Right').addEventListener('mousedown',Right)
-                document.getElementById('Right').addEventListener('mouseup',Rotation1)
+                document.getElementById('Left').addEventListener('touchdown',Left)
+                document.getElementById('Left').addEventListener('touchup',Rotation1)
+                document.getElementById('Right').addEventListener('touchdown',Right)
+                document.getElementById('Right').addEventListener('touchup',Rotation1)
         </script>
         <style type="text/css">
             .wrap {
