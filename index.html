@@ -80,7 +80,7 @@
                 return Number.isInteger(Math.floor(x*10000000))
             }
             
-            inputSpeed = parseFloat(prompt("Please enter your theoretical velocity(m/s):\n(UP TO 0.3 M/S)$$\( \sin \)$$"));
+            inputSpeed = parseFloat(prompt("Please enter your theoretical velocity(m/s):\n(UP TO 0.3 m/s)"));
             if (!isNumber(inputSpeed)){
                 prompt("Please only enter numerical values!");
             }
@@ -99,8 +99,7 @@
                 RIGHTassem.children[104].rotateX(factor*-inputSpeed)                
                 RIGHTassem.children[79].rotateY(factor*inputSpeed/50)                 
                 RIGHTassem.children[78].rotateY(factor*-inputSpeed/100)
-                RIGHTassem.children[98].rotateY(factor*-inputSpeed/100)
-                
+                RIGHTassem.children[98].rotateY(factor*-inputSpeed/100)                
             }
             function Time(){
                 today = new Date();
@@ -108,7 +107,6 @@
                 counterm = todayTime*0.001/60;
                 counters = todayTime/1000 % 60;
                 counterms =todayTime % 1000;
-                
                 if(counters<10){
                     if(counterms<10){
                 document.getElementById("Timer").innerHTML = "0"+Math.floor(counterm)+":0"+Math.floor(counters)+".00"+counterms
@@ -131,7 +129,7 @@
                 leftGearBox();
                 rightGearBox();
                 mesh.translateOnAxis(Lvec,100*inputSpeed)
-                if(mesh.position.x >2950 && mesh.position.z>750){
+                if(mesh.position.x >2850 && mesh.position.z>750){
                     clearInterval(t);
                     clearInterval(straight)
                     window.alert("Your time was "+document.getElementById("Timer").innerHTML)
