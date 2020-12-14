@@ -11,12 +11,12 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <div align="center" style='position: fixed; top: 10px; width:100%; text-align: right; z-index: 1;right:15px'>
+        <div align="center" style='position: fixed; bottom: 10px; width:100%; text-align: right; z-index: 1;right:15px'>
             <input type=button id="Start" value="Start" onclick="Rotation1()"/>
             <input type=button id="Left" value="Turn Left" />
             <input type=button id="Right" value="Turn Right"/>
         </div>
-        <div align="center" style='position: fixed; top: 35px; width:100%; text-align: right; z-index: 1;right:15px;color:white'>
+        <div align="center" style='position: fixed; bottom: 35px; width:100%; text-align: right; z-index: 1;right:15px;color:white'>
             <span rows="1" cols="15">Timer: </span><span id="Timer">00:00.000</span>
         </div>
         <a-scene
@@ -129,10 +129,12 @@
                 leftGearBox();
                 rightGearBox();
                 mesh.translateOnAxis(Lvec,100*inputSpeed)
-                if(mesh.position.x >2850 && mesh.position.z>750){
+                if(mesh.position.x >2750&& mesh.position.z>750){
                     clearInterval(t);
                     clearInterval(straight)
+                    
                     window.alert("Your time was "+document.getElementById("Timer").innerHTML)
+                    window.location.reload();
                 }
             }            
             function RotateLeft(){
